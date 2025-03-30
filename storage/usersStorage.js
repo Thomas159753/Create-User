@@ -1,15 +1,25 @@
 class UsersStorage {
     constructor() {
         this.storage = {
-            0: { id: 0, firstName: 'John', lastName: 'Doe' },
-            1: { id: 1, firstName: 'Jane', lastName: 'Doe' },
-        },
+            0: { id: 0,
+                firstName: 'John',
+                lastName: 'Doe',
+                email: "test1@email.com",
+                age: 25,
+                bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+            1: { id: 1,
+                firstName: 'Jane',
+                lastName: 'Doe',
+                email: "test2@email.com",
+                age: 30,
+                bio: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
+            },
         this.id = 2;
     }
 
-    addUser({firstName, lastName}) {
+    addUser({firstName, lastName, email, age, bio}) {
         const id = this.id;
-        this.storage[id] = { id, firstName, lastName };
+        this.storage[id] = { id, firstName, lastName, email, age, bio };
         this.id++;
     }
 
@@ -21,8 +31,8 @@ class UsersStorage {
         return this.storage[id];
     }
 
-    updateUser(id, {firstName, lastName}) {
-        this.storage[id] = {id, firstName, lastName}
+    updateUser(id, {firstName, lastName, email, age, bio}) {
+        this.storage[id] = {id, firstName, lastName, email, age, bio}
     }
 
     deleteUser(id){

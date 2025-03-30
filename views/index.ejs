@@ -12,6 +12,11 @@
             <th>ID</th>
             <th>Firstname</th>
             <th>Lastname</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Bio</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
 
         <% if (locals.users) {%>
@@ -20,6 +25,9 @@
             <td><%= user.id %></td>
             <td><%= user.firstName %></td>
             <td><%= user.lastName %></td>
+            <td><%= user.age %></td>
+            <td><%= user.email %></td>
+            <td><%= user.bio %></td>
             <td><a href="/<%= user.id %>/update">Update</a></td>
             <td>
                 <form action="/<%= user.id %>/delete" method="POST">
