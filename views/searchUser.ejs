@@ -7,6 +7,14 @@
 </head>
 <body>
     <h1><%= title %></h1>
+    
+    <%- include("partials/errors.ejs") %>
+    <form action="/search" method="GET">
+        <label for="search">Search</label>
+        <input type="text" name="search" id="search" placeholder="Search by Last Name" required>
+        <button type="submit">Search</button>
+    </form>
+
     <table>
         <tr>
             <th>ID</th>
@@ -37,12 +45,11 @@
         </tr>
         <% }); %>
         <% } else {%>
-            <tr>
-                <td colspan="8">No users found</td>
-            </tr>
-            <% } %>
+        <tr>
+            <td colspan="8">No users found</td>
+        </tr>
+        <% } %>
     </table>
-    <a href="/search">Search</a>
-    <a href="/create">Create a user</a>
+    <a href="/">Back to Home</a>
 </body>
 </html>

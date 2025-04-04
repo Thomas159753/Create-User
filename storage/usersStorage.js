@@ -38,6 +38,14 @@ class UsersStorage {
     deleteUser(id){
         delete this.storage[id];
     }
+
+    searchUser(value){
+        const users = Object.values(this.storage);
+        const foundUser = users.filter(user => {
+            user.lastName.toLowerCase().includes(value)
+        })
+        return foundUser
+    }
 }
 
 // Rather than exporting the class, we can export an instance of the class by instantiating it.
